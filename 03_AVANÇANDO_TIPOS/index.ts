@@ -51,3 +51,33 @@ function greeting(name:string): string {
 }
 console.log(greeting('Roberth'));
 //console.log(greeting(123)); vai impedir por inferencia 
+
+
+
+
+
+// 06 - Funções anônimas em TS
+setTimeout(function() {
+
+    const sallary: number = 1000;
+
+    //console.log(parseFloat(sallary)) Erro pois o parseFloat é um metodo para string 
+
+    //console.log(sallary);
+
+}, 2000)
+
+
+
+
+
+// 7 - Tipos Objeto
+function passaCoordenadas(coord: {x: number, y:number}){
+    console.log("Coordenada x" + coord.x)
+    console.log("Coordenada x" + coord.y)
+}
+const objCoord = {x: 328, y: 297};
+passaCoordenadas(objCoord);
+
+const pessoaObj:{nome: string, sobrenome: string}={nome: 'Roberth', sobrenome: 'Vieira'};
+console.log(pessoaObj);
