@@ -73,3 +73,26 @@ function showBalance(balance) {
 ;
 showBalance(100);
 showBalance("500"); //vai imprimir os dois pois o union types permite pois aceita string e numbers
+// 11 - Avançando em union types
+function showUserRole(role) {
+    if (typeof role === "boolean") {
+        return 'Usuario não aprovado!';
+    }
+    return `A função do usuario é ${role}`;
+}
+console.log(showUserRole(false));
+console.log(showUserRole("Admin"));
+function showId(id) {
+    console.log(`O ID é: ${id}`);
+}
+showId(1);
+showId("200");
+function showCords(obj) {
+    console.log(`x: ${obj.x} y: ${obj.y} z${obj.z}`);
+}
+const coordsObj = {
+    x: 10,
+    y: 15,
+    z: 16
+};
+showCords(coordsObj);

@@ -123,3 +123,53 @@ function showBalance(balance: string|number) {
 };
 showBalance(100);
 showBalance("500")//vai imprimir os dois pois o union types permite pois aceita string e numbers
+
+
+
+
+
+// 11 - Avançando em union types
+function showUserRole(role: boolean | string) {
+    if(typeof role === "boolean"){
+        return 'Usuario não aprovado!'
+    }
+
+    return `A função do usuario é ${role}`
+}
+
+console.log(showUserRole(false));
+console.log(showUserRole("Admin"));
+
+
+
+
+
+// 12 - Type alias
+type ID = string | number
+
+function showId(id: ID){
+    console.log(`O ID é: ${id}`)
+}
+showId(1);
+showId("200");
+
+
+
+
+
+// 13 - Interfaces
+interface Point{
+    x: number
+    y: number
+    z: number
+}
+
+function showCords(obj: Point){    //Funciona como o tipo alias porem com objetos com varias propriedades e valores
+    console.log(`x: ${obj.x} y: ${obj.y} z${obj.z}`)
+}
+const coordsObj: Point = {  //Point foi criado como objeto que aceita numero e esta variavel esta tipada com ele logo a variavel precsa armazenar tudo que o Point pede
+    x: 10,
+    y: 15,
+    z: 16
+}
+showCords(coordsObj);
