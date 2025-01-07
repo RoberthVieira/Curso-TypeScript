@@ -48,3 +48,28 @@ const objCoord = { x: 328, y: 297 };
 passaCoordenadas(objCoord);
 const pessoaObj = { nome: 'Roberth', sobrenome: 'Vieira' };
 console.log(pessoaObj);
+// 8 - Propriedades opcionais
+function showNumbers(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+showNumbers(1, 2, 3);
+showNumbers(1, 2);
+//showNumbers(1) não vai chamar a função pois na função foi pedido tres parametros e um é opcional portanto precisario de no minimo mais um e na chamada foi passado um, isso nãoaconteceria se tivessemos passado o sinal de parametro opcional
+// 9 - Validação da propriedade opcional (maneira certa de fazer uma propriedade ser opcional)
+function advancedGreeting(firstName, lastName) {
+    if (lastName !== undefined) {
+        return `Olá ${firstName} ${lastName}, tudo bem?`;
+    }
+    return `Olá ${firstName}, tudo bem?`;
+}
+console.log(advancedGreeting("Roberth"));
+console.log(advancedGreeting("Roberth", "Vieira"));
+// 10 - Union types
+function showBalance(balance) {
+    console.log(`O saldo da conta é R$${balance}`);
+}
+;
+showBalance(100);
+showBalance("500"); //vai imprimir os dois pois o union types permite pois aceita string e numbers
