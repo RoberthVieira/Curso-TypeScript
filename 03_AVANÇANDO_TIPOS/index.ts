@@ -173,3 +173,70 @@ const coordsObj: Point = {  //Point foi criado como objeto que aceita numero e e
     z: 16
 }
 showCords(coordsObj);
+
+
+
+
+
+
+// 14 - Interfaces x alias Diferenças
+interface Person{
+    name: string
+}
+                     //Nesse caso a interface Person foi incrementada
+interface Person{
+    age: number
+}
+const somePerson: Person = {name: "Roberth", age: 27} //tudo que tiver tipado com interface tem que atender oque a interface esta pedindo, do catrario dara erro
+console.log(somePerson);
+
+
+type personType = {
+    name: String
+}
+//type personType ={
+    //age: number      //diferente da interface o type alias não aceita essas incrementações e como se o type fosse uma const e a interface um let
+
+//}
+
+
+
+
+
+
+// 15 - Literal Types
+let test: "testando" 
+test = "testando"
+console.log(test)
+
+function showDirection(direction: "left" | "rigth" | "center") {
+    console.log(`A direção é ${direction}`)
+}
+showDirection("left")
+
+
+
+
+
+// 16 - Non-Null Assertion Operator
+const p = document.getElementById('some_p');
+console.log(p!.innerText);
+
+
+
+
+
+//17 - Bigint
+let n: bigint
+//n = 1 não satisfaz o bigint
+n = 1000n 
+console.log(n)
+
+
+
+
+
+//18 - Symbol
+let symbolA:Symbol = Symbol("a");
+let symbolB = Symbol("a");
+console.log(symbolA === symbolB)

@@ -96,3 +96,28 @@ const coordsObj = {
     z: 16
 };
 showCords(coordsObj);
+const somePerson = { name: "Roberth", age: 27 }; //tudo que tiver tipado com interface tem que atender oque a interface esta pedindo, do catrario dara erro
+console.log(somePerson);
+//type personType ={
+//age: number      //diferente da interface o type alias não aceita essas incrementações e como se o type fosse uma const e a interface um let
+//}
+// 15 - Literal Types
+let test;
+test = "testando";
+console.log(test);
+function showDirection(direction) {
+    console.log(`A direção é ${direction}`);
+}
+showDirection("left");
+// 16 - Non-Null Assertion Operator
+const p = document.getElementById('some_p');
+console.log(p.innerText);
+//17 - Bigint
+let n;
+//n = 1 não satisfaz o bigint
+n = 1000n;
+console.log(n);
+//18 - Symbol
+let symbolA = Symbol("a");
+let symbolB = Symbol("a");
+console.log(symbolA === symbolB);
